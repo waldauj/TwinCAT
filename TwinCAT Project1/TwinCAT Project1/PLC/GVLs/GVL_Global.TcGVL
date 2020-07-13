@@ -2,6 +2,8 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.4">
   <GVL Name="GVL_Global" Id="{6c8a4b5a-a045-4977-a9b8-4b786a50e3bf}">
     <Declaration><![CDATA[VAR_GLOBAL
+	fbAxisRef1			AT%I*:			AXIS_REF;			// axis 1
+	fbAxisRef2			AT%I*:			AXIS_REF;			// axis 2
 	
 END_VAR
 ]]></Declaration>
