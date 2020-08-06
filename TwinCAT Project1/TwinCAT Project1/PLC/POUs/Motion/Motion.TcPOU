@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.4">
+  <POU Name="Motion" Id="{52fb9ebd-7967-4e7b-9a37-8e6c19736361}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM Motion
+VAR
+	
+// motion
+	fOverride:		LREAL := 100.0;
+	
+// instance data
+	fbPower1:		MC_POWER;
+	fbPower2:		MC_POWER;
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+fbPower1(
+	Axis:= GVL_IO.fbAxisRef1, 
+	Enable:= TRUE, 
+	Enable_Positive:= TRUE, 
+	Enable_Negative:= TRUE, 
+	Override:= fOverride, 
+	BufferMode:= , 
+	Options:= , 
+	Status=> , 
+	Busy=> , 
+	Active=> , 
+	Error=> , 
+	ErrorID=> );
+
+fbPower2(
+	Axis:= GVL_IO.fbAxisRef2, 
+	Enable:= TRUE, 
+	Enable_Positive:= TRUE, 
+	Enable_Negative:= TRUE, 
+	Override:= fOverride, 
+	BufferMode:= , 
+	Options:= , 
+	Status=> , 
+	Busy=> , 
+	Active=> , 
+	Error=> , 
+	ErrorID=> );
+	]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>
