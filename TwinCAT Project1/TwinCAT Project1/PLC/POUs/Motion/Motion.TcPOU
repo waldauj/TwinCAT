@@ -6,43 +6,22 @@ VAR
 	
 // motion
 	fOverride:		LREAL := 100.0;
-	
+
 // instance data
-	fbPower1:		MC_POWER;
-	fbPower2:		MC_POWER;
-	
+	fbServo:		ARRAY[1..GVL_IO.cNrOfAxes] OF FB_Servo;
+		
 END_VAR
 ]]></Declaration>
     <Implementation>
       <ST><![CDATA[
-fbPower1(
-	Axis:= GVL_IO.fbAxisRef1, 
-	Enable:= TRUE, 
-	Enable_Positive:= TRUE, 
-	Enable_Negative:= TRUE, 
-	Override:= fOverride, 
-	BufferMode:= , 
-	Options:= , 
-	Status=> , 
-	Busy=> , 
-	Active=> , 
-	Error=> , 
-	ErrorID=> );
+// axis 1
+	fbServo[eAxis1](stAxis:= GVL_IO.stAxisRef[eAxis1],
+		fOverride:= fOverride);
 
-fbPower2(
-	Axis:= GVL_IO.fbAxisRef2, 
-	Enable:= TRUE, 
-	Enable_Positive:= TRUE, 
-	Enable_Negative:= TRUE, 
-	Override:= fOverride, 
-	BufferMode:= , 
-	Options:= , 
-	Status=> , 
-	Busy=> , 
-	Active=> , 
-	Error=> , 
-	ErrorID=> );
-	]]></ST>
+// axis 2
+	fbServo[eAxis2](stAxis:= GVL_IO.stAxisRef[eAxis2],
+		fOverride:= fOverride);
+]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

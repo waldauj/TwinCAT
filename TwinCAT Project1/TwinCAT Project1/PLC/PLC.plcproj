@@ -34,6 +34,9 @@
     <Compile Include="POUs\MAIN.TcPOU">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="POUs\Motion\FB_Servo.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="POUs\Motion\Motion.TcPOU">
       <SubType>Code</SubType>
     </Compile>

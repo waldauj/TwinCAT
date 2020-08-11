@@ -2,10 +2,15 @@
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.4">
   <GVL Name="GVL_IO" Id="{9c4f4da1-97b5-4005-aee4-d96ad60075fe}">
     <Declaration><![CDATA[{attribute 'qualified_only'}
-VAR_GLOBAL
-	fbAxisRef1:					AXIS_REF;			// axis 1
-	fbAxisRef2:					AXIS_REF;			// axis 2
+VAR_GLOBAL CONSTANT
+	cNrOfAxes:					INT := 2;
 	
-END_VAR]]></Declaration>
+END_VAR
+
+VAR_GLOBAL
+	stAxisRef:					ARRAY[1..cNrOfAxes] OF AXIS_REF;
+	
+END_VAR
+]]></Declaration>
   </GVL>
 </TcPlcObject>

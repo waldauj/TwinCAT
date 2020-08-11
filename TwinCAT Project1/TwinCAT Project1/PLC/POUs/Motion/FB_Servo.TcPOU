@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.4">
+  <POU Name="FB_Servo" Id="{8f67c982-b1b7-4ac1-80c7-dec324316813}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK FB_Servo
+
+(*
+	Beckhoff motion
+*)
+
+VAR_INPUT
+	stAxis:			AXIS_REF;
+	
+	fOverride:		LREAL;
+	
+END_VAR
+
+VAR_OUTPUT
+END_VAR
+
+VAR
+// instance data
+	fbPower:		MC_POWER;
+
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[
+
+
+// MC_POWER
+fbPower(
+	Axis:= stAxis, 
+	Enable:= TRUE, 
+	Enable_Positive:= TRUE, 
+	Enable_Negative:= TRUE, 
+	Override:= fOverride, 
+	BufferMode:= , 
+	Options:= , 
+	Status=> , 
+	Busy=> , 
+	Active=> , 
+	Error=> , 
+	ErrorID=> );
+	]]></ST>
+    </Implementation>
+  </POU>
+</TcPlcObject>

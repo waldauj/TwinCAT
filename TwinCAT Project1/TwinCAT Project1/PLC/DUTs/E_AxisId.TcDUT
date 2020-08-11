@@ -1,8 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.4">
   <DUT Name="E_AxisId" Id="{e68f8c4b-466d-44e7-8668-4f676f9b4ca4}">
-    <Declaration><![CDATA[{attribute 'qualified_only'}
-{attribute 'strict'}
+    <Declaration><![CDATA[{attribute 'toString'}
 TYPE E_AxisId :
 (
 	enum_member := 0,
